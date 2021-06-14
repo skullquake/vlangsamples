@@ -1,6 +1,8 @@
 module main
+import c
+import d
 fn main(){
 	f0()
-	f1()
-	f2()
+	c.f1()
+	d.f2()
 }
