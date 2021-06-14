@@ -33,7 +33,7 @@ pub fn (app &App) index() vweb.Result {
 }
 
 pub fn (mut app App) init_server() {
-	app.db = sqlite.connect('blog.db') or { panic(err) }
+	app.db = sqlite.connect('./db/blog.db') or { panic(err) }
 	app.db.create_table('article', [
 		'id integer primary key',
 		"title text default ''",
@@ -75,6 +75,16 @@ pub fn (mut app App) articles() {
 	app.json(x)
 }
 
+
+
 fn (mut app App) time() {
 	app.text(time.now().format())
+}
+pub fn(mut app App)test()vweb.Result{
+	return app.text('hello')
+}
+pub fn(mut app App)test2()vweb.Result{
+	articles := app.find_all_articles()
+	x := json.encode(articles)
+	return app.json(x)
 }
