@@ -2,6 +2,10 @@ fn main(){
 	println('main:start')
 	{
 		a:=[0,1,2,3]
+		println(a[..1])
+		println(a[..2])
+		println(a[..3])
+		println(a[..4])
 		println(a[0..1])
 		println(a[0..2])
 		println(a[0..3])
