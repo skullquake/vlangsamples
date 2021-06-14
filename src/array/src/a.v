@@ -38,5 +38,10 @@ fn main(){
 		println(a)
 		println(b)
 	}
+	{
+		a:=[]int{len:4,cap:4,init:-1}
+		println(a[0]or{panic('invalid index')})
+		println(a[32]or{panic('invalid index')})
+	}
 	println('main:end')
 }
