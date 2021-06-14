@@ -4,10 +4,8 @@ BIN=./bin/a.out
 $(BIN):$(SRC)
 	@-mkdir $(@D)
 	@$(V) $(SRC) -o $(BIN)
-run:$(BIN)
-	@$(BIN)
-.phony:clean vrun
-vrun:
-	@$(V) run $(SRC)
+.phony:clean
 clean:
 	@rm $(BIN)
+run:$(BIN)
+	@$(BIN)
